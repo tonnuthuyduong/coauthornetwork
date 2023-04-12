@@ -140,7 +140,9 @@ Correlation between h-index, citations with pagerank, centrality and betweeness
 <p>
 
 ```python
+
 #Node centrality 
+
 central = pd.DataFrame.from_dict(centrality,orient='index')
 central.columns = ['centrality']
 print(central['centrality'].nlargest(n=10))
@@ -164,6 +166,7 @@ print('correlation coefficient between h-index and page rank is',df_in['citation
 <p>
 
 ```python
+
 #Betweenness
 between = nx.betweenness_centrality(GG)
 betweenness = pd.DataFrame.from_dict(between, orient='index')
@@ -174,7 +177,9 @@ print('correlation coefficient between h-index and betweenness is',df_in['citati
 
 ```
 </p>
+
 ### Second Analysis
+
 For the second analysis, I will calculate the assortativity coeffecient, which means that how likely two nodes with similar attribute connect with each other. Afterwards, I will boostrap the network to see if the correlation coefficient is statistically significant.
 <p>
 
